@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 main() {
-  runApp(AppWidget(title: 'Ola Mundo'));    
+  //  runApp(AppWidget(title: 'Ola Mundo'));    
 }
 
 class AppWidget extends StatelessWidget{
@@ -13,25 +13,19 @@ class AppWidget extends StatelessWidget{
   Widget build(BuildContext context){
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.amber),
-      home: Container(
-        child: Center(
-          child: Text(
-            title,
-            textDirection: TextDirection.ltr,
-            style: TextStyle(color: Colors.red, fontSize: 100.0),
-        ),
-      ),
-      ),
+     
+      home: HomePage(),
     );
   }
 }
+ 
 
 
 class HomePage extends StatefulWidget{
   @override
   State<HomePage> createState() {
-    // TODO: implement createState
-    throw UnimplementedError();
+    Text('teste');
+    return HomePageState();
   }
 }
 
@@ -42,15 +36,16 @@ class HomePageState extends State<HomePage>{
   @override
   Widget build(BuildContext context){
     return Container(
-      child:Center(
+      child: Center(
         child: GestureDetector(
-          child: Text('Contador: $counter'),
+          child: Text('Futtering $counter'
+          ),
           onTap: (){
             setState(() {
-              counter++;
+                counter++;
             });
           },
-        ),
+        )
       ),
     );
   }
