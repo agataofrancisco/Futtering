@@ -1,17 +1,42 @@
 import 'package:autenticacao/componentes/botoes.dart';
 import 'package:autenticacao/componentes/componetes.dart';
 import 'package:autenticacao/componentes/quadrado.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class Login_Page extends StatelessWidget {
+class Login_Page extends StatefulWidget {
   Login_Page({super.key});
+
+  @override
+  State<Login_Page> createState() => _Login_PageState();
+}
+
+class _Login_PageState extends State<Login_Page> {
   //Criar o controlador de texto
-  final nomeusuarioController = TextEditingController();
+  final emailController = TextEditingController();
   final palavrapasseController = TextEditingController();
-
-  void usuario_entrar(){
-
+  
+Future<void> usuario_entrar() async {
+  void usuario_entrar() async{
+    showDialog(context: context, 
+    builder: (context){
+      return const Center(
+        child: CircularProgressIndicator(),
+      );
+    }
+    
+    );
+    
   }
+
+  
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: emailController.text,
+      password: palavrapasseController.text,
+    );
+    Navigator.pop(context);
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +64,7 @@ class Login_Page extends StatelessWidget {
 
             //NOME DE UTILIZADOR
             TextoInput(
-              controlador:nomeusuarioController,
+              controlador:emailController,
               dica: 'Nome de Utilizador',
               esconderTexto: false,
             ),
