@@ -1,6 +1,6 @@
-import 'package:autenticacao/pages/HomePage.dart';
+import 'package:autenticacao/pages/Login_Page.dart';
+import 'package:autenticacao/pages/Verif_Page.dart';
 import 'package:flutter/material.dart';
-import 'package:autenticacao/pages/HomePage.dart';
 
 
 void main() {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: inicio(),
+      home: verif(),
     );
   }
 }

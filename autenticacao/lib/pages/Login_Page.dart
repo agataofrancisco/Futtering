@@ -1,11 +1,12 @@
 import 'package:autenticacao/componentes/botoes.dart';
 import 'package:autenticacao/componentes/componetes.dart';
 import 'package:autenticacao/componentes/quadrado.dart';
+import 'package:autenticacao/pages/HomePage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Login_Page extends StatefulWidget {
-  Login_Page({super.key});
+  const Login_Page({super.key});
 
   @override
   State<Login_Page> createState() => _Login_PageState();
@@ -18,24 +19,16 @@ class _Login_PageState extends State<Login_Page> {
   
 Future<void> usuario_entrar() async {
   void usuario_entrar() async{
-    showDialog(context: context, 
-    builder: (context){
-      return const Center(
-        child: CircularProgressIndicator(),
-      );
-    }
-    
-    );
-    
-  }
-
-  
     await FirebaseAuth.instance.signInWithEmailAndPassword(
       email: emailController.text,
       password: palavrapasseController.text,
     );
     Navigator.pop(context);
   }
+  }
+
+  
+    
 
 
   @override
@@ -136,7 +129,7 @@ Future<void> usuario_entrar() async {
                   
                   const SizedBox(width: 25,),
 
-                  quadrado(caminhoImagem: 'lib/imagens/google.png'),
+                  quadrado(caminhoImagem: 'lib/imagens/aplle-logo.png'),
                 ],
               ),
 
