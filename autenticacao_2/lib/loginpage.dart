@@ -1,5 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class loginpage extends StatefulWidget {
@@ -24,8 +22,11 @@ class _loginpageState extends State<loginpage> {
           ),
         
           Expanded(
-            child: Container(
-              color: Colors.amber,
+            child: Center(
+              child: Container(
+                child: Text('cenas'),
+                color: Colors.amber,
+              ),
             ),
           ),
         ],
