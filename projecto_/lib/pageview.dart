@@ -1,61 +1,108 @@
 import 'dart:ui';
-
-import 'package:flutter/material.dart' show AppBar, BuildContext, Color, Colors, Column, Container, EdgeInsets, Expanded, Icon, Icons, Key, ListView, MainAxisAlignment, Padding, Row, Scaffold, StatelessWidget, Text, Widget;
-import 'dart:math';
-
+import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/basic.dart'; // Importe a biblioteca 'dart:math' para gerar um ícone aleatório.
 
 class perfili extends StatelessWidget {
   const perfili({Key? key}) : super(key: key);
 
+  itemprofile(String title, String subtitle, IconData iconData){
+  return Container(
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(10),
+      boxShadow: [
+        BoxShadow(
+         offset: Offset(0,5),
+         color: Colors.black,
+         spreadRadius: 2,
+         blurRadius: 10,
+        )
+      ]
+    ),
+    
+  );
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 113, 111, 111),
-  
       body: Padding(
         padding: const EdgeInsets.all(0.0),
-        child: Column(
-          children: [
-            Padding(
-             padding: const EdgeInsets.all(0.0),
-              child: Container(
-                child: SizedBox(
-                  height: 5,
-                  width: 190,
-                  child: Text('fdsfdfsfdsf'),
+        child: Center(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(30.0),
+                child: Container(
+                  width: 200,
+                  height: 200,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: Colors.black,
+                      width: 5,
+                    )
+                  ),
                 ),
-                color: Colors.grey,
-                height: 250,
               ),
-            ),
+              Padding( 
+                padding: const EdgeInsets.all(0.0),
+                child: Container(
+                  child: Text(
+                    'Meu Perfil',
+                    style: TextStyle(fontSize: 25),
+                  ),
+                ),
+              ),
+              Container(
+                width: 350,
+                decoration: BoxDecoration(
+                  color: Colors.grey[400],
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10)
+                  ),
+                ),
+                child:ListTile
+                (
+                  
+                )
+              ),
+            ]
+          ),
+        ),
+      ),
+    );
+  }
+}
+/*
 
-            Expanded(
-              child: ListView.builder(
-                
-                itemCount: 5,
-                itemBuilder: (context, index) {
+
+
+     
+        
+          
+          Expanded(
+              child: ListView.(
+                  EdgeInsets.all(5.0);
                   return Padding(
-                    padding: const EdgeInsets.all(10.0),                
+                    padding: const EdgeInsets.all(5.0),
                     child: Container(
-                      color: Colors.grey,
                       height: 70,
+                      decoration: BoxDecoration(
+                        color: Colors.grey[400],
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10)
+                        ),
+                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           // Landing à esquerda
-                          Row(
-                            children: [
-                              Center(
-                                  child:Text(
-                                    'testewiofghswi',
-                                    style: TextStyle(
-                                      color: Colors.black
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                          Text('Titulodgksfj'),
+                          // Trailing à direita (ícone aleatório, por exemplo, ponto de exclamação)
                         ],
                       ),
                     ),
@@ -63,9 +110,70 @@ class perfili extends StatelessWidget {
                 },
               ),
             )
-          ],
+          ),
         ),
       ),
-    );
-  }
-}
+
+
+child:ListView(
+        children:[
+          ListTile(
+            leading: Icon(Icons.star),
+            title: Text('Item 1'),
+            subtitle: Text('jtjktujtyyt'),
+            onTap: () {
+              // Ação ao tocar no Item 1
+              print('I');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.star),
+            title: Text('Item 2'),
+            subtitle: Text('jtjktujtyyt'),
+            onTap: () {
+              // Ação ao tocar no Item 2
+              print('jtjktujtyyt');
+            },
+          ),
+          // Adicione mais ListTiles conforme necessário
+        ],
+      ),
+
+
+
+
+Expanded(
+              child: ListView(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(0.0),
+                    child: Container(
+                      height: 40,
+                      width: 50,
+                      decoration: BoxDecoration(
+                        color: Colors.grey[400],
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                      ),
+                      child: ListTile(
+                        title: Text('Item 2'),
+                        subtitle: Text('jtjktujtyyt'),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            )
+*/
+
+
+
+
+
+
+
+
+
+

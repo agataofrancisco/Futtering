@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables
-
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:responsivetutorial/homepage.dart';
@@ -15,7 +13,7 @@ class nav extends StatefulWidget {
 
 class _navState extends State<nav> {
 
-  int _opselect = 3;
+  int _opselect = 0;
 
   void navegar (int index){
     setState(() {
@@ -44,7 +42,7 @@ class _navState extends State<nav> {
     ),
     Center(
       child: Text(
-        "4Homepage",
+        "5Homepage",
         style: TextStyle(fontSize: 50, backgroundColor: Colors.amberAccent),
       ),
     ),
@@ -60,12 +58,13 @@ class _navState extends State<nav> {
         color: Colors.grey.shade100,
         animationDuration: Duration(milliseconds: 300),
         onTap: navegar,
-        items: [
-          Icon(Icons.home_mini_rounded),
+        index: _opselect,
+        items: const [
+          Icon(Icons.home),
           Icon(Icons.list),
-          Icon(Icons.settings),
+          Icon(Icons.home),
           Icon(Icons.login),
-          Icon(Icons.money),
+          Icon(Icons.logout),
         ],
       ),
     );
