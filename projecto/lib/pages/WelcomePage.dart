@@ -14,7 +14,7 @@ class _WellcomePageState extends State<WellcomePage> with TickerProviderStateMix
   @override
   void initState() {
     super.initState();
-    // Adia a chamada da função zoom() por 500 milissegundos (ou o tempo desejado)
+    // Adia a chamada da função zoom() por 500 milissegundos
     Future.delayed(Duration(milliseconds: 500), () {
       zoom();
     });

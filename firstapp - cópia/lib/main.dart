@@ -20,7 +20,8 @@ class PaginaInicial extends StatelessWidget {
       appBar: AppBar(
         title: Text('Página Inicial'),
       ),
-      body: Center(
+      body: 
+      Center(
         child: ElevatedButton(
           onPressed: () {
             Navigator.push(

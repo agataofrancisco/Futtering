@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show AppBar, BuildContext, Color, Colors, Column, Container, EdgeInsets, Expanded, Icon, Icons, Key, ListView, MainAxisAlignment, Padding, Row, Scaffold, StatelessWidget, Text, Widget;
 import 'dart:math'; // Importe a biblioteca 'dart:math' para gerar um ícone aleatório.
 
 class MyMobileBody extends StatelessWidget {
@@ -7,9 +7,9 @@ class MyMobileBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[400],
+       backgroundColor: const Color.fromARGB(255, 113, 111, 111),
       appBar: AppBar(
-        title: Text('Telefone'),
+        title: Text('DFGJO'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

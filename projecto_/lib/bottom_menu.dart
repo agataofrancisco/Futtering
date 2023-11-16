@@ -1,6 +1,10 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:responsivetutorial/homepage.dart';
+import 'package:responsivetutorial/pageview.dart';
+import 'package:responsivetutorial/responsive/mobile_body.dart';
 
 class nav extends StatefulWidget {
   const nav({Key? key}) : super(key: key);
@@ -11,7 +15,7 @@ class nav extends StatefulWidget {
 
 class _navState extends State<nav> {
 
-  int _opselect = 0;
+  int _opselect = 3;
 
   void navegar (int index){
     setState(() {
@@ -21,21 +25,21 @@ class _navState extends State<nav> {
 
   final List<Widget> _pages = [
     Center(
-      child: Text(
-        "1Homepage",
-        style: TextStyle(fontSize: 50),
-      ),
+     child: perfili()
     ),
-    Center(
-      child: Text(
-        "2Homepage",
-        style: TextStyle(fontSize: 50),
+      Center(
+        child: MyMobileBody(),
       ),
-    ),
     Center(
       child: Text(
         "3Homepage",
         style: TextStyle(fontSize: 50),
+      ),
+    ),
+    Center(
+      child: Text(
+        "4Homepage",
+        style: TextStyle(fontSize: 50, backgroundColor: Colors.amberAccent),
       ),
     ),
     Center(
@@ -57,9 +61,10 @@ class _navState extends State<nav> {
         animationDuration: Duration(milliseconds: 300),
         onTap: navegar,
         items: [
-          Icon(Icons.home),
+          Icon(Icons.home_mini_rounded),
           Icon(Icons.list),
           Icon(Icons.settings),
+          Icon(Icons.login),
           Icon(Icons.money),
         ],
       ),
