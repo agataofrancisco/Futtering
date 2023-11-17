@@ -1,9 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/basic.dart'; // Importe a biblioteca 'dart:math' para gerar um ícone aleatório.
+import 'package:flutter/src/widgets/basic.dart';
 
-class perfili extends StatelessWidget {
-  const perfili({Key? key}) : super(key: key);
+class perfil extends StatelessWidget {
+  const perfil({Key? key}) : super(key: key);
 
   itemprofile(String title, String subtitle, IconData iconData){
   return Container(
@@ -26,11 +26,13 @@ class perfili extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 113, 111, 111),
+      backgroundColor: const Color.fromRGBO(224, 224, 224, 1),
       body: Padding(
         padding: const EdgeInsets.all(0.0),
-        child: Center(
+        child: Align(
+          alignment: Alignment.center,
           child: Column(
+  
             children: [
               Padding(
                 padding: const EdgeInsets.all(30.0),
@@ -55,19 +57,58 @@ class perfili extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                width: 350,
-                decoration: BoxDecoration(
-                  color: Colors.grey[400],
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(10)
+
+              Column(
+                children: [
+                  SizedBox(height: 10),
+                  Container(
+                    width: 350,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                    ),
+                    child: ListTile(
+                      leading: Icon(Icons.star),
+                       title: Text('Nome', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,),),
+                        subtitle: Text('Agatao Francisco', style: TextStyle(color: Colors.white,),),
+                    ),
                   ),
-                ),
-                child:ListTile
-                (
-                  
-                )
+                  SizedBox(height: 20), // Espaço vertical de 16 pixels (ajuste conforme necessário)
+                  Container(
+                    width: 350,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                    ),
+                    child: ListTile(
+                      leading: Icon(Icons.star),
+                       title: Text('Nome', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,),),
+                        subtitle: Text('Agatao Francisco', style: TextStyle(color: Colors.white,),),
+                    ),
+                  ),
+                  SizedBox(height: 20), 
+                  Container(
+                    width: 350,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                    ),
+                    child: ListTile(
+                      leading: Icon(Icons.star),
+                       title: Text('Nome', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,),),
+                        subtitle: Text('Agatao Francisco', style: TextStyle(color: Colors.white,),),
+                    ),
+                  ),
+                ],
               ),
             ]
           ),

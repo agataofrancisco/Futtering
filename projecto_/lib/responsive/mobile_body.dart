@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' show AppBar, BuildContext, Color, Colors, Column, Container, EdgeInsets, Expanded, Icon, Icons, Key, ListView, MainAxisAlignment, Padding, Row, Scaffold, StatelessWidget, Text, Widget;
+import 'package:flutter/material.dart' show AppBar, BuildContext, Color, Colors, Column, Container, EdgeInsets, Expanded, Icon, Icons, Key, ListView, MainAxisAlignment, Padding, Row, Scaffold, StatelessWidget, Text, TextStyle, Widget;
 import 'dart:math'; // Importe a biblioteca 'dart:math' para gerar um ícone aleatório.
 
 class MyMobileBody extends StatelessWidget {
@@ -7,7 +7,7 @@ class MyMobileBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: const Color.fromARGB(255, 113, 111, 111),
+       backgroundColor: const Color.fromRGBO(224, 224, 224, 1),
       appBar: AppBar(
         title: Text('DFGJO'),
       ),
@@ -32,16 +32,16 @@ class MyMobileBody extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: Container(
-                      color: Colors.grey,
+                      color: Colors.black,
                       height: 70,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           // Landing à esquerda
-                          Text('Landing ${index + 1}'),
+                          Text('Landing ${index + 1}',),
 
                           // Title ao lado do Landing
-                          Text('Title ${index + 1}'),
+                          Text('Title ${index + 1}',style: TextStyle(color: Colors.white,),),
 
                           // Trailing à direita (ícone aleatório, por exemplo, ponto de exclamação)
                           Icon(

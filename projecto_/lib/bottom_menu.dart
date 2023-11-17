@@ -1,7 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:responsivetutorial/homepage.dart';
-import 'package:responsivetutorial/pageview.dart';
+import 'package:responsivetutorial/perfil.dart';
 import 'package:responsivetutorial/responsive/mobile_body.dart';
 
 class nav extends StatefulWidget {
@@ -13,7 +13,7 @@ class nav extends StatefulWidget {
 
 class _navState extends State<nav> {
 
-  int _opselect = 0;
+  int _opselect = 1;
 
   void navegar (int index){
     setState(() {
@@ -23,7 +23,7 @@ class _navState extends State<nav> {
 
   final List<Widget> _pages = [
     Center(
-     child: perfili()
+     child: perfil()
     ),
       Center(
         child: MyMobileBody(),
@@ -54,13 +54,13 @@ class _navState extends State<nav> {
       body: _pages[_opselect],
       backgroundColor: const Color.fromARGB(255, 113, 111, 111),
       bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: const Color.fromARGB(255, 113, 111, 111),
-        color: Colors.grey.shade100,
+        backgroundColor: const Color.fromRGBO(224, 224, 224, 1),
+        color: Colors.black,
         animationDuration: Duration(milliseconds: 300),
         onTap: navegar,
         index: _opselect,
         items: const [
-          Icon(Icons.home),
+          Icon( Icons.account_circle, ),
           Icon(Icons.list),
           Icon(Icons.home),
           Icon(Icons.login),
