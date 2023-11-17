@@ -60,7 +60,7 @@ class _navState extends State<nav> {
         onTap: navegar,
         index: _opselect,
         items: const [
-          Icon( Icons.account_circle, ),
+          const Icon( Icons.account_circle, ),
           Icon(Icons.list),
           Icon(Icons.home),
           Icon(Icons.login),

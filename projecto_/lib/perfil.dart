@@ -71,7 +71,7 @@ class perfil extends StatelessWidget {
                       ),
                     ),
                     child: ListTile(
-                      leading: Icon(Icons.star),
+                      leading: const Icon(Icons.star,),
                        title: Text('Nome', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,),),
                         subtitle: Text('Agatao Francisco', style: TextStyle(color: Colors.white,),),
                     ),

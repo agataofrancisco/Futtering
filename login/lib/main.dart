@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:modernlogintute/pages/wellcome.dart';
+import 'package:modernlogintute/pages/wellcome_2.dart';
 import 'pages/login_page.dart';
 
 void main() {
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: teste(),
     );
   }
 }
