@@ -1,6 +1,5 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:responsivetutorial/homepage.dart';
 import 'package:responsivetutorial/perfil.dart';
 import 'package:responsivetutorial/responsive/mobile_body.dart';
 

@@ -1,4 +1,4 @@
-package com.example.responsivetutorial
+package com.example.projecto__
 
 import io.flutter.embedding.android.FlutterActivity
 

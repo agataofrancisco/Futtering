@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:responsivetutorial/bottom_menu.dart';
-import 'homepage.dart';
 
 void main() {
   runApp(const MyApp());
