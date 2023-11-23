@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:paciente_tecnofarma/pages/cadastropage.dart';
+import 'package:paciente_tecnofarma/pages/dashboard.dart';
 import 'package:paciente_tecnofarma/pages/init.dart';
 import 'package:paciente_tecnofarma/pages/loginpage.dart';
 import 'package:paciente_tecnofarma/pages/wellcome.dart';
@@ -18,11 +19,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',                             
       routes: {                               
-          '': (_) => Inicio(),
-          'telab': (context) => Inicio(),    
+        'cad': (context) =>   CadastroPage(),   
+        '/login': (context) => LoginPage(),
+        //'/init': (context) => Inicio(),   
       },  
       title: 'Flutter',
-      home: LoginPage(),
+      home: wellcome(),
     );
   }
 }

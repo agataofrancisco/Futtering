@@ -31,19 +31,13 @@ class Inicio extends StatelessWidget {
                   ElevatedButton(
                     child: Text('Cadastrar'),
                     onPressed: () {
-                      Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) =>CadastroPage()),
-                    );
+                      Navigator.pushNamed(context, 'cad');
                     },
                   ),
                   ElevatedButton(
                     child: Text('Entrar'),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) =>LoginPage()),
-                      );
+                      Navigator.pushNamed(context, '/login');
                     },
                   ),
                 ],

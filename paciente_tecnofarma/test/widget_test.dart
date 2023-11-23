@@ -1,30 +1,48 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:paciente_tecnofarma/pages/init.dart';
+import 'package:paciente_tecnofarma/pages/loginpage.dart';
+import 'package:paciente_tecnofarma/pages/wellcome.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import 'package:paciente_tecnofarma/main.dart';
+ class teste extends StatelessWidget {
 
-void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  final _controler = PageController();
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            height: 500,
+            child: PageView(
+              children: const [
+              /*  wellcome(),
+                Inicio(),
+                LoginPage(),*/
+              ],/*activeDotColor: Colors.grey,
+                    dotColor: Colors.grey,
+                    dotHeight: 15,
+                    dotWidth: 25,
+                    spacing: 16,
+                    type: WormType.thinUnderground*/
+            ),
+          ),
+          SmoothPageIndicator(
+            controller: _controler,
+            count: 4,
+            effect: ExpandingDotsEffect(
+              activeDotColor: Colors.grey,
+              dotColor: Colors.grey,
+              dotHeight: 30,
+              dotWidth: 30,
+              spacing: 16,
+            )
+          )
+        ]
+      ),
+    );
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
-  });
+  }
 }
