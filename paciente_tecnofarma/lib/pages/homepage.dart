@@ -1,6 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:paciente_tecnofarma/pages/dashboard.dart';
+import 'package:paciente_tecnofarma/pages/perfil.dart';
+import 'package:paciente_tecnofarma/pages/reservas.dart';
 
 
 class homepage extends StatefulWidget {
@@ -12,7 +14,7 @@ class homepage extends StatefulWidget {
 
 class _navState extends State<homepage> {
 
-  int _opselect = 2;
+  int _opselect = 0;
 
   void navegar (int index){
     setState(() {
@@ -21,12 +23,7 @@ class _navState extends State<homepage> {
   }
 
   final List<Widget> _pages = [
-    Center(
-      child: Text(
-        "1Homepage",
-        style: TextStyle(fontSize: 50),
-      ),
-    ),
+    perfili(),
       Center(
       child: Text(
         "2Homepage",
@@ -34,12 +31,7 @@ class _navState extends State<homepage> {
       ),
     ),
     dashboard(),
-    Center(
-      child: Text(
-        "4Homepage",
-        style: TextStyle(fontSize: 50, backgroundColor: Colors.amberAccent),
-      ),
-    ),
+    reservas(),
     Center(
       child: Text(
         "6Homepage",
@@ -52,10 +44,9 @@ class _navState extends State<homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _pages[_opselect],
-      backgroundColor: Color.fromARGB(255, 19, 64, 100),
+      
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Color.fromARGB(255, 19, 64, 100),
-
         animationDuration: Duration(milliseconds: 300),
         onTap: navegar,
         index: _opselect,
