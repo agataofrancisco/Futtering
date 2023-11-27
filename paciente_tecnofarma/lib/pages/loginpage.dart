@@ -132,7 +132,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
               SizedBox(height: 10),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/home');
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => wellcome()));
                 },
                 child: const Text('Entrar'),
               ),
@@ -147,7 +147,10 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, 'cad');
+                  Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CadastroPage()),
+              );
                 },
                 child: const Text('Criar uma conta'),
               ),

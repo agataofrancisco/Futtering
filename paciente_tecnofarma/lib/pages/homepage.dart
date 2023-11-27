@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:paciente_tecnofarma/pages/consultas.dart';
 import 'package:paciente_tecnofarma/pages/dashboard.dart';
 import 'package:paciente_tecnofarma/pages/perfil.dart';
 import 'package:paciente_tecnofarma/pages/reservas.dart';
@@ -32,12 +33,7 @@ class _navState extends State<homepage> {
     ),
     dashboard(),
     reservas(),
-    Center(
-      child: Text(
-        "6Homepage",
-        style: TextStyle(fontSize: 50, backgroundColor: Colors.amberAccent),
-      ),
-    ),
+    consultas()
   ];
 
   @override

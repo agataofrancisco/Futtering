@@ -88,36 +88,50 @@ class _perfiliState extends State<perfili> with SingleTickerProviderStateMixin {
                   scale: _zoomAnimation.value,
                   
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          left: 20.0,
-                          top: 10,
-                          bottom: 0.0,
-                        ),
-                        child: Text(
-                          'Perfil',
-                          style: TextStyle(
-                            fontSize: 35,
-                            color: Colors.grey,
+                      
+                      Center(
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                            bottom: 0
+                          ),
+                          child: CircleAvatar(
+                            backgroundColor: Colors.brown.shade800,
+                            child: const Text('AH'),
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          left: 20.0,
-                          top: 0.2,
-                          bottom: 0.0,
+                      
+                      ListTile(
+                        title: Text('censafddsfs'),
+                        subtitle: Text('censafddsfs'),
+                        trailing: Icon(Icons.map),
+                      ),
+
+                      SizedBox(height: 20,),
+
+                      ListTile(
+                        title: Text('censafddsfs'),
+                        subtitle: Text('censafddsfs'),
+                        trailing: Icon(Icons.map),
+                      ),
+
+                      SizedBox(height: 20,),
+
+                      ListTile(
+                        title: Text('censafddsfs'),
+                        subtitle: Text('censafddsfs'),
+                        trailing: Icon(Icons.map),
                         
-                        ),
-                        child: Text(
-                          'Visualize e controle os seus dados pessoais',
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.grey,
-                          ),
-                        ),
+                      ),
+
+                      SizedBox(height: 20,),
+
+                      ListTile(
+                        title: Text('censafddsfs'),
+                        subtitle: Text('censafddsfs'),
+                        trailing: Icon(Icons.map),
                       ),
                     ],
                   ),
@@ -126,7 +140,7 @@ class _perfiliState extends State<perfili> with SingleTickerProviderStateMixin {
             ),
           ),
           
-          Expanded(
+          /*Expanded(
             flex: 3,
             child: SlideTransition(
               position: _slideAnimation,
@@ -162,7 +176,7 @@ class _perfiliState extends State<perfili> with SingleTickerProviderStateMixin {
                 ),
               ),
             ),
-          ),
+          ),*/
         ],
       ),
     );

@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         //'/init': (context) => Inicio(),   
       },  
       title: 'Flutter',
-      home: wellcome(),
+      home: LoginPage(),
     );
   }
 }

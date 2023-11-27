@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class reservas extends StatefulWidget {
-  const reservas({super.key});
+class consultas extends StatefulWidget {
+  const consultas({super.key});
 
   @override
-  State<reservas> createState() => _reservasState();
+  State<consultas> createState() => _consultasState();
 }
 
-class _reservasState extends State<reservas> {
+class _consultasState extends State<consultas> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +30,7 @@ class _reservasState extends State<reservas> {
                   bottom: 0.0,
                 ),
                 child: Text(
-                  'Reservas',
+                  'Consultas',
                   style: TextStyle(
                     fontSize: 35,
                     color: Colors.grey,
@@ -45,7 +45,7 @@ class _reservasState extends State<reservas> {
                 
                 ),
                 child: Text(
-                  'Reserve os seus medicamentos',
+                  'Marque uma consulta',
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.grey,
@@ -62,13 +62,13 @@ class _reservasState extends State<reservas> {
                       return SizedBox(
                         height: 400,
                         child: Center(
-                          child: Text('Cenas'),
+                          child: Text('Marcar uma consulta'),
                         ),
                       ); 
                       }
                     );
                   },                      
-                child: Text('Adicionar reserva'),
+                child: Text('Marcar uma consulta'),
                 ),
               ),
               Padding(
