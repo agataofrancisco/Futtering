@@ -106,7 +106,7 @@ class _perfiliState extends State<perfili> with SingleTickerProviderStateMixin {
                         ),
                         child: ListTile(
                           title: Text('dados.name'),
-                          subtitle: Text(dados.name),
+                          subtitle: Text('dados.name'),
                           trailing: Icon(Icons.map),
                         
                           tileColor: Colors.blue, // Cor de fundo
