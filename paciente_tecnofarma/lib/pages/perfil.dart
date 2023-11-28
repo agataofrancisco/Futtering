@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 import 'package:paciente_tecnofarma/pages/wellcome.dart';
 import '../componentes/caixas_de_texto.dart';
 import 'package:paciente_tecnofarma/main.dart';
@@ -96,43 +95,98 @@ class _perfiliState extends State<perfili> with SingleTickerProviderStateMixin {
                           padding: const EdgeInsets.only(
                             bottom: 0
                           ),
-                          child: CircleAvatar(
-                            backgroundColor: Colors.brown.shade800,
-                            child: const Text('AH'),
+                          child: Container(
+                            height: 100,
+                            child: CircleAvatar(
+                              backgroundColor: Colors.brown.shade800,
+                              child: const Text('AH'),
+                            ),
                           ),
                         ),
                       ),
                       
-                      ListTile(
-                        title: Text('censafddsfs'),
-                        subtitle: Text('censafddsfs'),
-                        trailing: Icon(Icons.map),
-                      ),
-
-                      SizedBox(height: 20,),
-
-                      ListTile(
-                        title: Text('censafddsfs'),
-                        subtitle: Text('censafddsfs'),
-                        trailing: Icon(Icons.map),
-                      ),
-
-                      SizedBox(height: 20,),
-
-                      ListTile(
-                        title: Text('censafddsfs'),
-                        subtitle: Text('censafddsfs'),
-                        trailing: Icon(Icons.map),
+                      Container(
+                        constraints: BoxConstraints(
+                          maxWidth: MediaQuery.of(context).size.width * 1, // Ajuste conforme necessário
+                        ),
+                        child: ListTile(
+                          title: Text('censafddsfs'),
+                          subtitle: Text('censafddsfs'),
+                          trailing: Icon(Icons.map),
                         
+                          tileColor: Colors.blue, // Cor de fundo
+                          contentPadding: EdgeInsets.all(10), 
+                          // Preenchimento interno
+                          shape: RoundedRectangleBorder( // Borda
+                            borderRadius: BorderRadius.circular(10),
+                            side: BorderSide(color: Colors.black), // Cor da borda
+                          ),
+                        ),
                       ),
 
                       SizedBox(height: 20,),
 
-                      ListTile(
-                        title: Text('censafddsfs'),
-                        subtitle: Text('censafddsfs'),
-                        trailing: Icon(Icons.map),
+                      Container(
+                        constraints: BoxConstraints(
+                          maxWidth: MediaQuery.of(context).size.width * 1, // Ajuste conforme necessário
+                        ),
+                        child: ListTile(
+                          title: Text('censafddsfs'),
+                          subtitle: Text('censafddsfs'),
+                          trailing: Icon(Icons.map),
+                        
+                          tileColor: Colors.blue, // Cor de fundo
+                          contentPadding: EdgeInsets.all(10), 
+                          // Preenchimento interno
+                          shape: RoundedRectangleBorder( // Borda
+                            borderRadius: BorderRadius.circular(10),
+                            side: BorderSide(color: Colors.black), // Cor da borda
+                          ),
+                        ),
                       ),
+
+                      SizedBox(height: 20,),
+
+                     Container(
+                        constraints: BoxConstraints(
+                          maxWidth: MediaQuery.of(context).size.width * 1, // Ajuste conforme necessário
+                        ),
+                        child: ListTile(
+                          title: Text('censafddsfs'),
+                          subtitle: Text('censafddsfs'),
+                          trailing: Icon(Icons.map),
+                        
+                          tileColor: Colors.blue, // Cor de fundo
+                          contentPadding: EdgeInsets.all(10), 
+                          // Preenchimento interno
+                          shape: RoundedRectangleBorder( // Borda
+                            borderRadius: BorderRadius.circular(10),
+                            side: BorderSide(color: Colors.black), // Cor da borda
+                          ),
+                        ),
+                      ),
+
+                      SizedBox(height: 20,),
+
+                     Container(
+                        constraints: BoxConstraints(
+                          maxWidth: MediaQuery.of(context).size.width * 1, // Ajuste conforme necessário
+                        ),
+                        child: ListTile(
+                          title: Text('censafddsfs'),
+                          subtitle: Text('censafddsfs'),
+                          trailing: Icon(Icons.map),
+                        
+                          tileColor: Colors.blue, // Cor de fundo
+                          contentPadding: EdgeInsets.all(10), 
+                          // Preenchimento interno
+                          shape: RoundedRectangleBorder( // Borda
+                            borderRadius: BorderRadius.circular(10),
+                            side: BorderSide(color: Colors.black), // Cor da borda
+                          ),
+                        ),
+                      ),
+                      Icon(Icons.logout)
                     ],
                   ),
                 );
