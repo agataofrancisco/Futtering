@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:paciente_tecnofarma/model/lista.dart';
 import 'package:paciente_tecnofarma/pages/consultas.dart';
 import 'package:paciente_tecnofarma/pages/dashboard.dart';
 import 'package:paciente_tecnofarma/pages/perfil.dart';
@@ -25,12 +26,6 @@ class _navState extends State<homepage> {
 
   final List<Widget> _pages = [
     perfili(),
-      Center(
-      child: Text(
-        "2Homepage",
-        style: TextStyle(fontSize: 50),
-      ),
-    ),
     dashboard(),
     reservas(),
     consultas()

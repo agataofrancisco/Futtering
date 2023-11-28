@@ -2,16 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:paciente_tecnofarma/pages/wellcome.dart';
 import '../componentes/caixas_de_texto.dart';
 import 'package:paciente_tecnofarma/main.dart';
+import 'package:paciente_tecnofarma/model/dados.dart';
 
-
-class perfilPage extends StatefulWidget {
-  const perfilPage({super.key});
-
-  @override
-  State<perfilPage> createState() => _perfilPageState();
-}
-
-class _perfilPageState extends State<perfilPage> {
+class perfilPage extends StatelessWidget {
+  final dados Dados;
+  const perfilPage({Key? key, required this.Dados}) : super(key: key);
+  
    @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,7 +15,6 @@ class _perfilPageState extends State<perfilPage> {
     );
   }
 }
-
 
 class perfili extends StatefulWidget {
   @override
@@ -110,8 +105,8 @@ class _perfiliState extends State<perfili> with SingleTickerProviderStateMixin {
                           maxWidth: MediaQuery.of(context).size.width * 1, // Ajuste conforme necessário
                         ),
                         child: ListTile(
-                          title: Text('censafddsfs'),
-                          subtitle: Text('censafddsfs'),
+                          title: Text('dados.name'),
+                          subtitle: Text(dados.name),
                           trailing: Icon(Icons.map),
                         
                           tileColor: Colors.blue, // Cor de fundo
