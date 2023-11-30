@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:paciente_tecnofarma/pages/wellcome.dart';
 
 import 'homepage.dart';
@@ -27,8 +27,8 @@ class wellcome3 extends StatelessWidget {
             TextButton(onPressed: () {
                 Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => homepage()),
-              );
+                MaterialPageRoute(builder: (context) => homepage(token: token)),
+              )
             },  child: Text('Vamos comecar'))
           ],
         ),
@@ -36,4 +36,4 @@ class wellcome3 extends StatelessWidget {
       
     );
   }
-}
+}*/

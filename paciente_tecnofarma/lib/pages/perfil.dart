@@ -17,6 +17,7 @@ class perfilPage extends StatelessWidget {
 }
 
 class perfili extends StatefulWidget {
+  
   @override
   _perfiliState createState() => _perfiliState();
 }
@@ -146,6 +147,7 @@ class _perfiliState extends State<perfili> with SingleTickerProviderStateMixin {
                         constraints: BoxConstraints(
                           maxWidth: MediaQuery.of(context).size.width * 1, // Ajuste conforme necessário
                         ),
+                        
                         child: ListTile(
                           title: Text('censafddsfs'),
                           subtitle: Text('censafddsfs'),

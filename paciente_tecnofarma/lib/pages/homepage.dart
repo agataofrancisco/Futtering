@@ -8,7 +8,10 @@ import 'package:paciente_tecnofarma/pages/reservas.dart';
 
 
 class homepage extends StatefulWidget {
-  const homepage({Key? key}) : super(key: key);
+  final token;
+
+  const homepage({super.key, required this.token});
+
 
   @override
   State<homepage> createState() => _navState();

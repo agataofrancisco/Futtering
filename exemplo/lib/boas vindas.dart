@@ -1,28 +1,38 @@
-import 'dart:js';
-
-import 'package:exemplo/homepage.dart';
-import 'package:exemplo/login.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class boasvindaspage extends StatefulWidget {
-  const boasvindaspage({super.key});
+ // Assuming you have a file named 'boas_vindas.dart'
+import 'homepage.dart';
+import 'login.dart';
 
-  @override
-  State<boasvindaspage> createState() => _boasvindaspageState();
+void main() {
+  runApp(const BoasVindas());
 }
 
-class _boasvindaspageState extends State<boasvindaspage> {
+class BoasVindas extends StatefulWidget {
+  const BoasVindas({Key? key}) : super(key: key);
 
   @override
-  void initState(){
-    super.initState();  
-    verificarToken().then((value){
-      Navigator.pushReplacement(context, 
-      MaterialPageRoute(builder: (context) =>homepage())
-      );
-    }
-    );
+  State<BoasVindas> createState() => _BoasVindasState();
+}
+
+class _BoasVindasState extends State<BoasVindas> {
+  @override
+  void initState() {
+    super.initState();
+    verificarToken().then((value) {
+      if (value) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => homepage()),
+        );
+      } else {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => login()),
+        );
+      }
+    });
   }
 
   @override
@@ -30,15 +40,15 @@ class _boasvindaspageState extends State<boasvindaspage> {
     return Scaffold(
       body: Center(
         child: CircularProgressIndicator(),
-      )
+      ),
     );
   }
-  
-Future<bool> verificarToken () async {
+
+  Future<bool> verificarToken() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    if (sharedPreferences.getString('token') != null){
+    if (sharedPreferences.getString('token') != null) {
       return true;
-    }else {
+    } else {
       return false;
     }
   }

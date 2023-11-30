@@ -1,36 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:paciente_tecnofarma/pages/cadastropage.dart';
-import 'package:paciente_tecnofarma/pages/dashboard.dart';
 import 'package:paciente_tecnofarma/pages/homepage.dart';
-import 'package:paciente_tecnofarma/pages/init.dart';
 import 'package:paciente_tecnofarma/pages/loginpage.dart';
-import 'package:paciente_tecnofarma/pages/teste/cadastr.dart';
-import 'package:paciente_tecnofarma/pages/wellcome.dart';
-import 'package:paciente_tecnofarma/testes.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert';
+import 'package:jwt_decoder/jwt_decoder.dart';
 
-void main() {
-  runApp(const MyApp());
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  runApp( MyApp(token: prefs.getString('token'),));
 }
 
 
-
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  var token; // Assuming token can be null, adjust if needed
 
+  MyApp({Key? key, @required this.token}) : super(key: key);
+   /*DateTime expirationDate = JwtDecoder.getExpirationDate(token);
+
+  // 2025-01-13 13:04:18.000
+  print(expirationDate);*/
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      home: (JwtDecoder.isExpired(token) == false) ? homepage(token: token) : LoginPage(),
+      
       initialRoute: '/',                             
       routes: {                               
         'cad': (context) =>   CadastroPage(),   
         '/login': (context) => LoginPage(),
-        '/home': (context) => homepage(),
+        //'/home': (context) => homepage(),
         //'/init': (context) => Inicio(),   
       },  
-      title: 'Flutter',
-      home: homepage(),
     );
   }
 }

@@ -28,7 +28,7 @@ class WellcomeHomePage extends StatelessWidget {
     final _pages = [
       wellcome1(), 
       wellcome2(), 
-      wellcome3(), 
+      //wellcome3(), 
       ]; // Replace with your actual pages
 
     return Scaffold(

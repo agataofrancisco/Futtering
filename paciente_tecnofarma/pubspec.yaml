@@ -42,6 +42,9 @@ dependencies:
   flutter_mapbox_navigation: ^0.0.26
   shared_preferences: ^2.2.0
   http: ^0.13.5
+  jwt_decoder: ^2.0.1
+  dart_jsonwebtoken: ^2.8.0
+
 
 dev_dependencies:
   flutter_test:
