@@ -5,6 +5,7 @@ import 'package:paciente_tecnofarma/pages/loginpage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 import 'package:jwt_decoder/jwt_decoder.dart';
+import 'package:http/http.dart' as http;
 
 
 void main() async {
@@ -13,7 +14,7 @@ void main() async {
   runApp( MyApp(token: prefs.getString('token'),));
 }
 
-
+                                                             
 class MyApp extends StatelessWidget {
   var token; // Assuming token can be null, adjust if needed
 
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: (JwtDecoder.isExpired(token) == false) ? homepage(token: token) : LoginPage(),
+      home: //LoginPage(), 
+      (JwtDecoder.isExpired(token) == false) ? homepage(ttoken: token) : LoginPage(),
       
       initialRoute: '/',                             
       routes: {                               
@@ -39,4 +41,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 

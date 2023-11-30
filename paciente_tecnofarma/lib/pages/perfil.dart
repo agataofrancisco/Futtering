@@ -3,26 +3,20 @@ import 'package:paciente_tecnofarma/pages/wellcome.dart';
 import '../componentes/caixas_de_texto.dart';
 import 'package:paciente_tecnofarma/main.dart';
 import 'package:paciente_tecnofarma/model/dados.dart';
+import 'package:http/http.dart';
+import 'package:jwt_decoder/jwt_decoder.dart';
 
-class perfilPage extends StatelessWidget {
-  final dados Dados;
-  const perfilPage({Key? key, required this.Dados}) : super(key: key);
-  
-   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: perfili(),
-    );
-  }
-}
+class perfilPage extends StatefulWidget {
 
-class perfili extends StatefulWidget {
-  
+  final  cod_token;
+
+  const perfilPage({super.key, required this.cod_token});
+
   @override
-  _perfiliState createState() => _perfiliState();
+  State<perfilPage> createState() => _perfilPageState();
 }
 
-class _perfiliState extends State<perfili> with SingleTickerProviderStateMixin {
+class _perfiliState extends State<perfilPage> with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _zoomAnimation;
   late Animation<Offset> _slideAnimation;
@@ -68,9 +62,7 @@ class _perfiliState extends State<perfili> with SingleTickerProviderStateMixin {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 19, 64, 100),
-        title: Text('My App'),
-        
-        
+        title: Text('My App'),          
       ),
       backgroundColor: Color.fromARGB(255, 19, 64, 100),
       body: Column(
@@ -191,43 +183,7 @@ class _perfiliState extends State<perfili> with SingleTickerProviderStateMixin {
             ),
           ),
           
-          /*Expanded(
-            flex: 3,
-            child: SlideTransition(
-              position: _slideAnimation,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(40),
-                    topRight: Radius.circular(40),
-                  ),
-                  color: Color.fromARGB(255, 12, 46, 73),
-                ),
-                child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  /*Container(
-                    margin: EdgeInsets.only(
-                    top: 0,
-                    left: 50,
-                    right: 50,
-                    bottom: 0,
-                    ),
-                    width: double.infinity,
-                    height: 150,
-                    decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 86, 152, 206),
-                    ),
-                  ),*/
-                  
-                  
-                    
-                  
-                ]
-                ),
-              ),
-            ),
-          ),*/
+          
         ],
       ),
     );
@@ -238,51 +194,46 @@ class _perfiliState extends State<perfili> with SingleTickerProviderStateMixin {
     _animationController.dispose();
     super.dispose();
   }
+
+  
 }
 
 
-/*fghzd
 
-appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 19, 64, 100),
-        title: Text('My App'),
-        ),
+/*
+
+Future loginUser(BuildContext context, String email, String password) async {
+  const _url = 'https://tecnofarma.vercel.app/authenticate';
+  var response = await http.post(Uri.parse(_url), body: {
+    "email": email,
+    "password": password,
+  });
+
+  try {
+    if (response.statusCode == 200) {
+      var token = json.decode(response.body);
       
-      backgroundColor: Color.fromARGB(255, 19, 64, 100),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-        Padding(
-            padding: const EdgeInsets.only(
-              left: 20.0,
-              top: 10,
-              bottom: 0.0,
-            ),
-             child: Text(
-              'Perfil',
-              style: TextStyle(
-                fontSize: 35,
-                color: Colors.grey,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(
-              left: 20.0,
-              top: 0.2,
-              bottom: 0.0,
-             
-            ),
-            
-            child: Text(
-              'Visualize e controle os seus dados pessoais',
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.grey,
-              ),
-            ),
-          ),
-         
-        ],
+      prefs.setString('token', token);
+      //ernesto@tecnobase.com Tecno1234
 
- */
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => homepage(token: token,)),
+      );
+      print(token);
+    } else if (email.isEmpty && password.isEmpty) {
+      print("Erro: Campos vazios");
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('Preencha todos os campos'),
+      ));
+    } else {
+      print("Erro na autenticação");
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('Dados nao coorespondem'),
+      ));
+    }
+  } catch (e) {
+    print("Error decoding JSON: $e");
+    // Handle the JSON decoding error appropriately, e.g., show an error message
+  }
+}*/

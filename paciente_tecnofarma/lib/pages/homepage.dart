@@ -1,6 +1,6 @@
+import 'dart:html';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:paciente_tecnofarma/model/lista.dart';
 import 'package:paciente_tecnofarma/pages/consultas.dart';
 import 'package:paciente_tecnofarma/pages/dashboard.dart';
 import 'package:paciente_tecnofarma/pages/perfil.dart';
@@ -8,10 +8,8 @@ import 'package:paciente_tecnofarma/pages/reservas.dart';
 
 
 class homepage extends StatefulWidget {
-  final token;
-
-  const homepage({super.key, required this.token});
-
+  final ttoken;
+  const homepage({super.key, required this.ttoken});
 
   @override
   State<homepage> createState() => _navState();
@@ -20,6 +18,8 @@ class homepage extends StatefulWidget {
 class _navState extends State<homepage> {
 
   int _opselect = 0;
+  
+
 
   void navegar (int index){
     setState(() {
@@ -28,7 +28,7 @@ class _navState extends State<homepage> {
   }
 
   final List<Widget> _pages = [
-    perfili(),
+    perfilPage(cod_token: ttoken),
     dashboard(),
     reservas(),
     consultas()
